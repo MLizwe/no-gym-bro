@@ -1,0 +1,213 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #0f0f0f;
+    --surface: #1a1a1a;
+    --accent: #e8ff47;
+    --accent-dark: #c8df27;
+    --text: #f0f0f0;
+    --text-muted: #888;
+    --radius: 12px;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 24px;
+}
+
+/* Landing page */
+#landing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    max-width: 480px;
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    letter-spacing: -1px;
+    line-height: 1;
+}
+
+h1 span {
+    color: var(--accent);
+}
+
+p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--accent);
+    color: #000;
+    border: none;
+    padding: 16px 40px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: var(--radius);
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-dark);
+}
+
+.btn-primary:active {
+    transform: scale(0.97);
+}
+
+/* Form page */
+#form-page {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+    max-width: 480px;
+}
+
+#form-page h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+.form-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: left;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-group select {
+    background-color: var(--surface);
+    color: var(--text);
+    border: 1px solid #333;
+    border-radius: var(--radius);
+    padding: 14px 16px;
+    font-size: 1rem;
+    width: 100%;
+    appearance: none;
+    cursor: pointer;
+}
+
+.form-group select:focus {
+    outline: 2px solid var(--accent);
+    border-color: transparent;
+}
+
+/* Workout plan page */
+#plan-page {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+    max-width: 600px;
+}
+
+#plan-page h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+.day-card {
+    background-color: var(--surface);
+    border-radius: var(--radius);
+    padding: 20px;
+    width: 100%;
+    text-align: left;
+}
+
+.day-card h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.exercise-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #2a2a2a;
+}
+
+.exercise-item:last-child {
+    border-bottom: none;
+}
+
+.exercise-name {
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.exercise-meta {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+}
+
+.plan-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--text);
+    border: 1px solid #333;
+    padding: 12px 28px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.btn-secondary:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* Rest day card */
+.day-card.rest {
+    border: 1px dashed #2a2a2a;
+    background-color: transparent;
+}
+
+.day-card.rest h3 {
+    color: var(--text-muted);
+}

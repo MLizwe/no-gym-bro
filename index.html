@@ -3,13 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WorkOut</title>
+    <title>No Gym Bro</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-    <body>
-        <h1>WELCOME!</h1>
-        <p>Your personalized workout plan geberator</p>
-        <button type = "button" id ="getStarted">Get Started</button>
-        <link rel = "stylesheet" href = "styles.css">
-        <script src = "script.js"></script>
-    </body>
+<body>
+
+    <!-- Page 1: Landing -->
+    <div id="landing">
+        <h1>NO GYM<br><span>BRO.</span></h1>
+        <p>Your personalized no-equipment workout plan generator.</p>
+        <button class="btn-primary" id="getStarted">Get Started</button>
+    </div>
+
+    <!-- Page 2: User Input Form -->
+    <div id="form-page">
+        <h2>Let's build your plan</h2>
+
+        <div class="form-group">
+            <label for="level">Fitness level</label>
+            <select id="level">
+                <option value="beginner">Beginner</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="advanced">Advanced</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="goal">Your goal</label>
+            <select id="goal">
+                <option value="strength">Build strength</option>
+                <option value="cardio">Improve cardio</option>
+                <option value="flexibility">Increase flexibility</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="days">Days per week</label>
+            <select id="days">
+                <option value="3">3 days</option>
+                <option value="4">4 days</option>
+                <option value="5">5 days</option>
+            </select>
+        </div>
+
+        <button class="btn-primary" id="generateBtn">Generate My Plan</button>
+    </div>
+
+    <!-- Page 3: Workout Plan -->
+    <div id="plan-page">
+        <h2>Your Weekly Plan</h2>
+        <div id="plan-output"></div>
+        <div class="plan-actions">
+            <button class="btn-secondary" id="restartBtn">Start Over</button>
+        </div>
+    </div>
+
+    <script src="workouts.js"></script>
+    <script src="script.js"></script>
+</body>
 </html>
