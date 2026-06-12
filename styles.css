@@ -211,3 +211,118 @@ p {
 .day-card.rest h3 {
     color: var(--text-muted);
 }
+
+/* Clickable exercise rows */
+.exercise-item {
+    cursor: pointer;
+}
+
+.exercise-item:hover .exercise-name {
+    color: var(--accent);
+}
+
+/* Modal overlay — covers the full screen with a dark backdrop */
+#modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+#modal-overlay.open {
+    display: flex;
+}
+
+/* Modal box */
+#modal {
+    background: #1e1e1e;
+    border: 1px solid #2a2a2a;
+    border-radius: var(--radius);
+    padding: 32px;
+    max-width: 480px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+#modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    cursor: pointer;
+    line-height: 1;
+}
+
+#modal-close:hover {
+    color: var(--text);
+}
+
+#modal-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    padding-right: 24px;
+}
+
+#modal-meta {
+    font-size: 0.85rem;
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+#modal-steps {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#modal-steps li {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    font-size: 0.95rem;
+    color: var(--text);
+    line-height: 1.5;
+    text-align: left;
+}
+
+#modal-steps li::before {
+    content: counter(step);
+    counter-increment: step;
+    background: var(--accent);
+    color: #000;
+    font-size: 0.75rem;
+    font-weight: 800;
+    border-radius: 50%;
+    min-width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+}
+
+#modal-steps {
+    counter-reset: step;
+}
+
+#modal-rest {
+    background: #2a2a2a;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-align: left;
+}
